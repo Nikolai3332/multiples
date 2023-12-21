@@ -1,0 +1,27 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int randomNumber;
+        int minValue = 1;
+        int maxValue = 27;
+        int maxThreeDigitNumber = 1000;
+        int minThreeDigitNumber = 1;
+        int sumResult = 0;
+
+        Random rand = new Random();
+        randomNumber = rand.Next(minValue, maxValue + 1);
+        Console.WriteLine($"Случйное сгенерированное число N = {randomNumber}");
+
+        for (int i = 0; i <= maxThreeDigitNumber; i += randomNumber)
+        {
+            if (i >= minThreeDigitNumber)
+            {
+                sumResult++;
+            }
+        }
+
+        Console.WriteLine($"Итого чисел кратных {randomNumber} получилось: {sumResult}.");
+        Console.ReadKey();
+    }
+}
