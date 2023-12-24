@@ -2,26 +2,23 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int randomNumber;
-        int minValue = 1;
-        int maxValue = 27;
-        int maxThreeDigitNumber = 1000;
-        int minThreeDigitNumber = 1;
+        int randonNumberN;
         int sumResult = 0;
+        int minRandomNumberRage = 1;
+        int maxRandomNumberRage = 27;
+        int minThreeDigitNumber = 0;
+        int maxThreeDigitNumber = 100;
 
-        Random rand = new Random();
-        randomNumber = rand.Next(minValue, maxValue + 1);
-        Console.WriteLine($"Случйное сгенерированное число N = {randomNumber}");
+        Random random = new Random();
+        randonNumberN = random.Next(minRandomNumberRage, maxRandomNumberRage + 1);
+        Console.WriteLine($"Случайное сгенерированное числ N = {randonNumberN}.");
 
-        for (int i = 0; i <= maxThreeDigitNumber; i += randomNumber)
+        for (int i = minThreeDigitNumber; i <= maxThreeDigitNumber; i += randonNumberN)
         {
-            if (i >= minThreeDigitNumber)
-            {
-                sumResult++;
-            }
+            sumResult++;
         }
 
-        Console.WriteLine($"Итого чисел кратных {randomNumber} получилось: {sumResult}.");
+        Console.WriteLine($"Сумма чисел кратных {randonNumberN} = {sumResult}.");
         Console.ReadKey();
     }
 }
